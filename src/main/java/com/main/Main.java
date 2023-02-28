@@ -29,6 +29,7 @@ public class Main {
             productEnum.put(productsEnum,10);
         }
         coinsEnums.put(CoinsEnum.TWO_DIRHAMS,0);
+        coinsEnums.put(CoinsEnum.DIRHAM,0);
         machine = new VendingMachine(coinsEnums,productEnum);
 
         for (CoinsEnum coinsEnum : CoinsEnum.values()) {
@@ -36,14 +37,18 @@ public class Main {
             if(rest>=coinsEnum.getPrice()){
                 numberOfCoin = (int) Math.floor(rest/coinsEnum.getPrice());
                 rest = (int) (rest%coinsEnum.getPrice());
-                if(machine.getBalance().get(coinsEnum) < numberOfCoin && coinsEnum.getPrice()>1)  rest = (int) check;
-                else if(machine.getBalance().get(coinsEnum) < numberOfCoin ){
-                    throw new InsuffisantCoinsInBalanceException("Sorry insufficient coins in our balance");
+                try {
+                    if(machine.getBalance().get(coinsEnum) < numberOfCoin && coinsEnum.getPrice()>1)  rest = (int) check;
+                    else if(machine.getBalance().get(coinsEnum) < numberOfCoin ){
+                        throw new InsuffisantCoinsInBalanceException("Sorry insufficient coins in our balance");
+                    }
+                    else {
+                        exchangeCoin.put(coinsEnum,numberOfCoin);
+                    }
+                } catch(Exception e){
+                    exchangeCoin.replaceAll((key,value)-> value=0);
+                    System.out.println("refund afforded");
                 }
-                else {
-                    exchangeCoin.put(coinsEnum,numberOfCoin);
-                }
-
             }
             else continue;
             if(rest==0) break;

@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dacbecd-7c80-42f7-9dc6-aa2bd80fc452" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exceptions/InsuffisantCoinsInBalanceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exceptions/InsuffisantCoinsInBalace.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/VendingMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/user/test/buyProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/user/test/buyProductTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677485277670</updated>
       <workItem from="1677485280185" duration="25050000" />
-      <workItem from="1677609374966" duration="2106000" />
+      <workItem from="1677609374966" duration="3305000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1677514710084</created>

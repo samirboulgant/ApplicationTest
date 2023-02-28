@@ -2,7 +2,7 @@ package com.user.test;
 
 import com.enums.CoinsEnum;
 import com.enums.ProductsEnum;
-import com.exceptions.InsuffisantCoinsInBalace;
+import com.exceptions.InsuffisantCoinsInBalanceException;
 import com.exceptions.InsuffisantPriceException;
 import com.exceptions.InsuffisantStockException;
 import com.model.User;
@@ -40,7 +40,7 @@ public class buyProductTest {
     }
 
      @Test
-     public void buyProductTest() throws InsuffisantCoinsInBalace, InsuffisantStockException, InsuffisantPriceException {
+     public void buyProductTest() throws InsuffisantCoinsInBalanceException, InsuffisantStockException, InsuffisantPriceException {
          user.buyProduct(vendingMachine);
          Assertions.assertEquals(vendingMachine.getBalance().get(CoinsEnum.TEN_DIRHAMS),11);
          Assertions.assertEquals(vendingMachine.getBalance().get(CoinsEnum.FIVE_DIRHAMS),9);
@@ -52,6 +52,11 @@ public class buyProductTest {
      @Test
      public void shouldThrowInsuffisantStockException(){
          Assertions.assertThrows(InsuffisantStockException.class,()->user1.buyProduct(vendingMachine));
+     }
+
+     @Test
+    public void shouldThrowInsuffisantCoinsInBalanceException(){
+
      }
 
 

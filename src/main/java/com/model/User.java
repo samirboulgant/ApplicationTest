@@ -89,10 +89,11 @@ public class User {
             throw new InsuffisantPriceException("You don't have enough money");
         else if(machine.getStock().get(productToBuy)==0) throw new InsuffisantStockException("the product is now out of stock");
         else {
+            machine.exchangeToUser(this);
             machine.increaseBalance(this.inputPrice);
             machine.decreaseStock(this.productToBuy);
             this.isProductVended=true;
-            machine.exchangeToUser(this);
+
         }
 
     }
