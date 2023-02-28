@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dacbecd-7c80-42f7-9dc6-aa2bd80fc452" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enums/CoinsEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enums/ProductsEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exceptions/CoinNotAllowedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exceptions/InsuffisantCoinsInBalace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exceptions/InsuffisantPriceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exceptions/InsuffisantStockException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Supplier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/VendingMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/user/test/buyProductTest.java" afterDir="false" />
+    <list default="true" id="0dacbecd-7c80-42f7-9dc6-aa2bd80fc452" name="Changes" comment="First commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -120,8 +104,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677485277670</updated>
-      <workItem from="1677485280185" duration="24574000" />
+      <workItem from="1677485280185" duration="25050000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1677514710084</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677514710085</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,5 +129,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
 </project>
