@@ -2,12 +2,11 @@ package com.model;
 
 import com.enums.CoinsEnum;
 import com.enums.ProductsEnum;
-import com.exceptions.InsuffisantCoinsInBalace;
+import com.exceptions.InsuffisantCoinsInBalanceException;
 import com.exceptions.InsuffisantPriceException;
 import com.exceptions.InsuffisantStockException;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class User {
     private HashMap<CoinsEnum,Integer> inputPrice;
@@ -58,18 +57,20 @@ public class User {
         machine.decreaseBalance(this.inputPrice);
         this.isProductVended=false;
     }
-    public HashMap<CoinsEnum,Integer> exchangeMoney(VendingMachine machine) throws InsuffisantPriceException, InsuffisantCoinsInBalace {
+    public HashMap<CoinsEnum,Integer> exchangeMoney(VendingMachine machine) throws InsuffisantPriceException, InsuffisantCoinsInBalanceException {
         double total = CalculateSumOfCoins();
         double rest;
         int numberOfCoin;
         rest = total-productToBuy.getPrice() ;
         HashMap<CoinsEnum,Integer> exchangeCoin = new HashMap<>();
             for (CoinsEnum coinsEnum : CoinsEnum.values()) {
+                double check=rest;
                 if(rest>=coinsEnum.getPrice()){
                     numberOfCoin = (int) Math.floor(rest/coinsEnum.getPrice());
                     rest = (int) (rest%coinsEnum.getPrice());
-                    if(machine.getBalance().get(coinsEnum) < numberOfCoin ){
-                        throw new InsuffisantCoinsInBalace("Sorry insufficient coins in our balance");
+                    if(machine.getBalance().get(coinsEnum) < numberOfCoin && coinsEnum.getPrice()>1)  rest =check;
+                    else if(machine.getBalance().get(coinsEnum) < numberOfCoin ){
+                        throw new InsuffisantCoinsInBalanceException("Sorry insufficient coins in our balance");
                     }
                     else {
                         exchangeCoin.put(coinsEnum,numberOfCoin);
@@ -81,27 +82,29 @@ public class User {
         return exchangeCoin;
     }
 
-    public void buyProduct(VendingMachine machine) throws InsuffisantStockException, InsuffisantPriceException, InsuffisantCoinsInBalace {
+    public void buyProduct(VendingMachine machine) throws InsuffisantStockException, InsuffisantPriceException, InsuffisantCoinsInBalanceException {
         double total = CalculateSumOfCoins();
+        // return exception when a user doesn't enter enough money to selected
         if(this.productToBuy.getPrice()> total)
             throw new InsuffisantPriceException("You don't have enough money");
         else if(machine.getStock().get(productToBuy)==0) throw new InsuffisantStockException("the product is now out of stock");
         else {
-            machine.decreaseStock(this.productToBuy);
             machine.increaseBalance(this.inputPrice);
+            machine.decreaseStock(this.productToBuy);
             this.isProductVended=true;
             machine.exchangeToUser(this);
-
         }
 
     }
+
+    // it calculates the total price the user entered in vending machine
     public double CalculateSumOfCoins(){
-        double totale=0;
+        double total=0;
         for(CoinsEnum coins : CoinsEnum.values()){
             if(inputPrice.get(coins)!=null)
-                totale+=coins.getPrice()*inputPrice.get(coins);
+                total+=coins.getPrice()*inputPrice.get(coins);
         }
-        return totale;
+        return total;
     }
 
 }
